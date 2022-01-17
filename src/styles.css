@@ -1,0 +1,12 @@
+.hidden.align {
+  display: none;
+}
+
+.space {
+  width: 3px;
+}
+
+.align {
+  display: flex;
+  justify-content: flex-start;
+}
