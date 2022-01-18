@@ -8,15 +8,13 @@ const gameResult = document.querySelector(".gameResult");
 
 function letsPlayGame() {
   hidden.classList.remove("hidden");
-  guessTheNumber.innerText = Math.ceil(inputNumber.value * Math.random()); 
+  guessTheNumber.innerText = Math.round(inputNumber.value * Math.random());
   userNumberPost.innerText = userNumberGet.value;
   if (guessTheNumber.innerText === userNumberPost.innerText) {
     gameResult.innerText = "You won!";
-  }
-  else {
+  } else {
     gameResult.innerText = "You lost!";
   }
 }
-
 
 playGame.addEventListener("click", letsPlayGame);
