@@ -1,20 +1,27 @@
-const inputNumber = document.querySelector(".inputNumber--get");
-let userNumberGet = document.querySelector(".userNumber--get");
-let userNumberPost = document.querySelector(".userNumber--post");
-let guessTheNumber = document.querySelector(".inputNumber--post");
-const playGame = document.querySelector(".play__game");
-const hidden = document.querySelector(".hidden");
-const gameResult = document.querySelector(".gameResult");
+const clockTitle = document.querySelector(".js-clock");
 
-function letsPlayGame() {
-  hidden.classList.remove("hidden");
-  guessTheNumber.innerText = Math.round(inputNumber.value * Math.random());
-  userNumberPost.innerText = userNumberGet.value;
-  if (guessTheNumber.innerText === userNumberPost.innerText) {
-    gameResult.innerText = "You won!";
-  } else {
-    gameResult.innerText = "You lost!";
-  }
+function countClock() {
+  let xDay = new Date(2022, 11, 25, 0, 0, 0);
+  let today = new Date;
+
+  const todayYear = today.getFullYear();
+  const todayMonth = today.getMonth();
+  const todayDate = today.getDate();
+  const todayHours = today.getHours();
+  const todayMinutes = today.getMinutes();
+  const todaySeconds = today.getSeconds();
+
+
+  const xYear =  xDay.getFullYear();
+  const xMonth = xDay.getMonth();
+  const xDate = xDay.getDate();
+  const xHours = xDay.getHours();
+  const xMinutes = xDay.getMinutes();
+  const xSeconds = xDay.getSeconds();
+
+  console.log(todayYear, todayMonth, todayDate, todayHours, todayMinutes, todaySeconds);
+  console.log(xYear, xMonth, xDate, xHours, xMinutes, xSeconds);
 }
 
-playGame.addEventListener("click", letsPlayGame);
+countClock();
+setInterval(countClock, 1000);
