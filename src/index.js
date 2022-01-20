@@ -20,9 +20,23 @@ const colors = [
 ];
 // console.log(colors.length);
 
-const colorOrder1 = Math.floor(Math.random() * colors.length);
-const colorOrder2 = Math.floor(Math.random() * colors.length);
+const btn = document.querySelector("button");
 
-console.log(colors[colorOrder1]);
-console.log(colors[colorOrder2]);
+function changeBackgroundColor() {
+  const colorOrder1 = Math.floor(Math.random() * colors.length);
+  const colorOrder2 = Math.floor(Math.random() * colors.length);
+  document.documentElement.style.setProperty(
+    "--left-color",
+    `${colors[colorOrder1]}`
+  );
+  document.documentElement.style.setProperty(
+    "--right-color",
+    `${colors[colorOrder2]}`
+  );
+}
+
+btn.addEventListener("click", changeBackgroundColor);
+
+// console.log(colors[colorOrder1]);
+// console.log(colors[colorOrder2]);
 // console.log(color1);
