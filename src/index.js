@@ -1,32 +1,28 @@
-const clockTitle = document.querySelector(".js-clock");
+const colors = [
+  "#ef5777",
+  "#575fcf",
+  "#4bcffa",
+  "#34e7e4",
+  "#0be881",
+  "#f53b57",
+  "#3c40c6",
+  "#0fbcf9",
+  "#00d8d6",
+  "#05c46b",
+  "#ffc048",
+  "#ffdd59",
+  "#ff5e57",
+  "#d2dae2",
+  "#485460",
+  "#ffa801",
+  "#ffd32a",
+  "#ff3f34",
+];
+// console.log(colors.length);
 
-function countClock() {
-  let xDay = new Date(2022, 11, 25, 0, 0, 0);
-  let today = new Date();
+const colorOrder1 = Math.floor(Math.random() * colors.length);
+const colorOrder2 = Math.floor(Math.random() * colors.length);
 
-  let diffInTotalTime = xDay.getTime() - today.getTime(); // 이거는 ms단위. 총 시간
-  let DIVIDE_CONSTANT = 1000 * 60 * 60 * 24;
-  let diffDays = Math.floor(diffInTotalTime / DIVIDE_CONSTANT);
-  let diffHours = String(
-    Math.floor((diffInTotalTime / DIVIDE_CONSTANT - diffDays) * 24)
-  ).padStart(2, "0");
-  let diffMinutes = String(
-    Math.floor((diffInTotalTime / DIVIDE_CONSTANT - diffDays) * 24 * 60) -
-      diffHours * 60
-  ).padStart(2, "0");
-  let diffSeconds = String(
-    Math.floor(
-      (diffInTotalTime / DIVIDE_CONSTANT - diffDays) * 24 * 60 * 60 -
-        diffHours * 60 * 60 -
-        diffMinutes * 60
-    )
-  ).padStart(2, "0");
-  clockTitle.innerText =
-    `${diffDays}d ${diffHours}h ${diffMinutes}m ${diffSeconds}s`.padStart(
-      2,
-      "0"
-    );
-}
-// 토큰 뭐임?
-countClock();
-setInterval(countClock, 1000);
+console.log(colors[colorOrder1]);
+console.log(colors[colorOrder2]);
+// console.log(color1);
